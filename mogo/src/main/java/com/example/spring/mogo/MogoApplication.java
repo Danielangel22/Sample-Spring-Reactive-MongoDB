@@ -13,13 +13,12 @@ public class MogoApplication {
 		SpringApplication.run(MogoApplication.class, args);
 	}
 	
-
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/messages").allowedOrigins("http://localhost:4200");
+				registry.addMapping("/**").allowedOrigins("http://localhost:4200");
 			}
 		};
 	}
